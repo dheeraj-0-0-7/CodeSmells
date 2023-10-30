@@ -8,10 +8,6 @@ def calculate_volume(length, width, height):
     return calculate_area(length, width) * height
 
 def calculate_surface_area(length, width, height):
-    return 2 * (calculate_area(length, width) + length * height + width * height)
-
-# A common base function for area and perimeter calculation
-def calculate_area_and_perimeter(length, width):
-    area = calculate_area(length, width)
-    perimeter = calculate_perimeter(length, width)
-    return area, perimeter
+    base_area = calculate_area(length, width)
+    lateral_area = 2 * (length * height + width * height)
+    return 2 * base_area + lateral_area
